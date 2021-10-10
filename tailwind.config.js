@@ -1,8 +1,8 @@
 module.exports = {
   purge: [
-    './components/**/*.{vue,js}',
-    './layouts/**/*.vue',
-    './pages/**/*.vue',
+    './components/**/*.{vue,js,jsx,tsx}',
+    './layouts/**/*.{vue,js,jsx,tsx}',
+    './pages/**/*.{vue,js,jsx,tsx}',
     './plugins/**/*.{js,ts}',
     './nuxt.config.{js,ts}',
   ],

@@ -1,9 +1,30 @@
-export default {
+import { NuxtConfig } from '@nuxt/types'
+
+require('dotenv').config()
+const { API_KEY } = process.env
+
+const config: NuxtConfig = {
+  publicRuntimeConfig: {
+    apiKey: process.env.NODE_ENV !== 'production' ? API_KEY : undefined,
+  },
+
+  privateRuntimeConfig: {
+    apiKey: API_KEY,
+  },
+
+  typescript: {
+    typeCheck: {
+      eslint: {
+        files: './**/*.{ts,js,tsx,jsx,vue}',
+      },
+    },
+  },
+
+  ssr: false,
 
   srcDir: 'src/',
 
   // Target (https://go.nuxtjs.dev/config-target)
-  target: 'static',
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
@@ -31,17 +52,27 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+
+    '@nuxtjs/composition-api/module',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/dotenv',
+    '@nuxt/http',
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {},
+  build: {
+    babel: {
+      presets: ['@nuxt/babel-preset-app', 'vca-jsx'],
+    },
+  },
 }
+
+export default config

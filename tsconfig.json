@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "jsx": "preserve",
     "target": "ES2018",
     "module": "ESNext",
     "moduleResolution": "Node",
@@ -14,7 +15,7 @@
     "strict": true,
     "noEmit": true,
     "experimentalDecorators": true,
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "paths": {
       "~/*": ["src/*"],
       "@/*": ["src/*"]
