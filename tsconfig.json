@@ -15,10 +15,14 @@
     "strict": true,
     "noEmit": true,
     "experimentalDecorators": true,
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "paths": {
-      "~/*": ["src/*"],
-      "@/*": ["src/*"]
+      "~/*": [
+        "./src/*"
+      ],
+      "@/*": [
+        "./src/*"
+      ]
     },
     "types": [
       "@types/node",
@@ -26,6 +30,21 @@
       "jest"
     ]
   },
+  "files": [
+    "src/types/vue-shim.d.ts",
+    "./shims-tsx.d.ts",
+    "src/types/element-ui-type.d.ts"
+  ],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "tests/**/*.ts",
+    "tests/**/*.tsx", 
+    "src/types/vue-shim.d.ts",
+    "src/types/element-ui-type.d.ts",
+    "./shims-tsx.d.ts"
+  ],
   "exclude": [
     "node_modules",
     ".nuxt",

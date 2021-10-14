@@ -26,6 +26,7 @@
 //                 Kanitkorn Sujautra <https://github.com/lukyth>
 //                 Sebastian Silbermann <https://github.com/eps1lon>
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { VNode } from 'vue'
 import * as CSS from 'csstype'
 
